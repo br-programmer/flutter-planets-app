@@ -1,0 +1,24 @@
+{
+    "title": "Planets of the Solar System",
+    "searchHint": "Search planet...",
+    "error": "An error occurred while loading planets",
+    "details": {
+        "notFound": "Planet not found",
+        "moreAbout": "More about {{planet}}",
+        "orbitalDistanceKm": "Orbital distance (km)",
+        "equatorialRadiusKm": "Equatorial radius (km)",
+        "volumeKm3": "Volume (km³)",
+        "massKg": "Mass (kg)",
+        "densityGCm3": "Density (g/cm³)",
+        "surfaceGravityMs2": "Surface gravity (m/s²)",
+        "escapeVelocityKmh": "Escape velocity (km/h)",
+        "dayLengthEarthDays": "Day length (Earth days)",
+        "yearLengthEarthDays": "Year length (Earth days)",
+        "orbitalSpeedKmh": "Orbital speed (km/h)",
+        "moons": {
+            "one": "Moon",
+            "other": "Moons"
+        },
+        "atmosphereComposition": "Atmosphere composition"
+    }
+}

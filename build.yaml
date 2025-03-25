@@ -1,0 +1,19 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        generate_for:
+          include:
+            - "lib/core/shared/data/models/**_model.dart"
+            - "lib/features/**/data/models/**_model.dart"
+      json_serializable:
+        options:
+          explicit_to_json: true
+        generate_for:
+          include:
+            - "lib/core/shared/data/models/**_model.dart"
+            - "lib/features/**/data/models/**_model.dart"
+      source_gen|combining_builder:
+        options:
+          ignore_for_file:
+            - "type=lint"
