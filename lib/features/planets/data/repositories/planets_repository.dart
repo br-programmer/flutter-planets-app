@@ -47,7 +47,12 @@ class PlanetsRepository implements IPlanetsRepository {
     };
 
     if (planetLocal != null) {
-      return Success(planetLocal.toEntity());
+      var planet = planetLocal;
+      if (favorite != null && planet.favorite != favorite) {
+        planet = planet.copyWith(favorite: favorite);
+        await _localDatasource.save(planet);
+      }
+      return Success(planet.toEntity());
     }
 
     final remoteResult = await _remoteDatasource.byId(id);
