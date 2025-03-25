@@ -86,7 +86,7 @@ Example content:
 ```json
 {
     "baseUrl": "your-http-url-here",
-    "apiKey": "your-api-key-here"
+    "planetsApiKey": "your-api-key-here"
 }
 ```
 
