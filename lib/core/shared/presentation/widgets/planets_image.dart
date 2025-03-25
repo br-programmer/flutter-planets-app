@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class PlanetsImage extends StatelessWidget {
@@ -12,13 +13,16 @@ class PlanetsImage extends StatelessWidget {
   final double? width;
   final double? height;
 
-  @override
-  Widget build(BuildContext context) {
+  String get proxyImageUrl {
     final encodedUrl = Uri.encodeComponent(imageUrl);
     const baseUrl = String.fromEnvironment('baseUrl');
-    final proxyUrl = '${baseUrl}image-proxy?url=$encodedUrl';
+    return '${baseUrl}image-proxy?url=$encodedUrl';
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return CachedNetworkImage(
-      imageUrl: proxyUrl,
+      imageUrl: switch (kIsWeb) { true => proxyImageUrl, false => imageUrl },
       fit: BoxFit.cover,
       width: width,
       height: height,
