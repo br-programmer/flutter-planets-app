@@ -14,8 +14,11 @@ class PlanetsImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final encodedUrl = Uri.encodeComponent(imageUrl);
+    const baseUrl = String.fromEnvironment('baseUrl');
+    final proxyUrl = '${baseUrl}image-proxy?url=$encodedUrl';
     return CachedNetworkImage(
-      imageUrl: imageUrl,
+      imageUrl: proxyUrl,
       fit: BoxFit.cover,
       width: width,
       height: height,
